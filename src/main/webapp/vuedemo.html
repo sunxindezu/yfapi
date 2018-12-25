@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>孙鑫 vuedemo</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div v-if = "show" id="app">
+		<span :title="title">{{sunxin}}</span>
+	</div>
+	<div v-else id="app">
+		就是孙鑫
+	</div>
+	<div class="list">
+		<ul>
+			<li v-for="(name,index) in names" v-bind:key="index">{{ name }}-{{ index }}</li>
+		</ul>
+		<button v-on:click="shide">也是离婚</button>
+		<input v-model="title">
+	</div>
+	
+</body>
+<script type="text/javascript">
+	new Vue({
+		el:"#app",
+		data:{
+			sunxin:"是孫鑫嗎！",
+			title:"能出來嗎",
+			show:false,
+			names:["123","456","789"]
+		}
+	})
+	new Vue({
+		el:".list",
+		data:{
+			sunxin:"是孫鑫嗎！",
+			title:"能出來嗎",
+			show:false,
+			names:["123","456","789"]
+		},
+		methods:{
+			shide: function (){
+				alert("孙鑫666");
+			}
+		}
+	})
+</script>
+</html>
